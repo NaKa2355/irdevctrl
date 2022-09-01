@@ -39,7 +39,7 @@ func (rd *RawData) UnmarshalJSON(data []byte) error {
 
 	for i, pulse := range strRawData.Pluses {
 
-		pulse = strings.ReplaceAll(pulse, " ", "")
+		pulse = strings.Replace(pulse, " ", "", -1)
 
 		if _, err = fmt.Sscanf(pulse, "%dus", &width); err == nil {
 			rawData[i].Prefix = Micro
