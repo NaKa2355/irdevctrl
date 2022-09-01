@@ -1,5 +1,5 @@
 package irdev
 
-type Converter interface {
+type DataConverter interface {
 	ConvertToRawData() (RawData, error)
 }
