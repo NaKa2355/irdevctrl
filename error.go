@@ -1,4 +1,4 @@
-package irdev
+package irdevctrl
 
 import "errors"
 
