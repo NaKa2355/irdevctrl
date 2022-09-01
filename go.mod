@@ -1,1 +1,1 @@
-module github.com/NaKa2355/irdev
+module github.com/NaKa2355/irdevctrl
