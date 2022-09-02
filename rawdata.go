@@ -76,7 +76,7 @@ func (rawData RawData) MarshalJSON() ([]byte, error) {
 		}
 
 		if pulse.Prefix == Milli {
-			strRawData.Pluses[i] = fmt.Sprintf("%dus", pulse.Width)
+			strRawData.Pluses[i] = fmt.Sprintf("%dms", pulse.Width)
 			continue
 		}
 	}
