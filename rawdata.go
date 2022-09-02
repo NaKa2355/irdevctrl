@@ -35,6 +35,10 @@ func (rd *RawData) UnmarshalJSON(data []byte) error {
 		return err
 	}
 
+	if len(strRawData.Pluses)%2 == 0 {
+		return fmt.Errorf("number of data must be odd number: %s", ErrInvaildInput)
+	}
+
 	rawData := make([]Pulse, len(strRawData.Pluses))
 
 	for i, pulse := range strRawData.Pluses {
@@ -53,7 +57,7 @@ func (rd *RawData) UnmarshalJSON(data []byte) error {
 			continue
 		}
 
-		return fmt.Errorf("raw data's format is wrong: %s", err)
+		return fmt.Errorf("raw data's format is wrong at \"%s\": %s", pulse, ErrInvaildInput)
 
 	}
 
