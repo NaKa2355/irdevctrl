@@ -50,7 +50,7 @@ func (rd *RawData) UnmarshalJSON(data []byte) error {
 		if _, err = fmt.Sscanf(pulse, "%dms", &width); err == nil {
 			rawData[i].Prefix = Milli
 			rawData[i].Width = width
-
+			continue
 		}
 
 		return fmt.Errorf("raw data's format is wrong: %s", err)
